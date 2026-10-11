@@ -1,0 +1,110 @@
+/* Ferragem Ponto Certo · estilos (mobile first) */
+:root {
+  /* Cores da placa da loja: vermelho, azul-marinho e amarelo */
+  --cor: #B3121B;
+  --cor-escura: #8A0E15;
+  --apoio: #1B2E6B;
+  --amarelo: #F2C200;
+  --texto: #1d1d1f;
+  --texto-suave: #4b5563;
+  --fundo: #ffffff;
+  --cinza: #f4f2ef;
+  --borda: #e5e1db;
+  --zap: #157A3F;          /* verde escuro: contraste 5,4:1 com texto branco (WCAG AA) */
+  --raio: 14px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--texto); background: var(--fundo); line-height: 1.55; }
+img, svg { max-width: 100%; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.skip { position: absolute; left: -999px; top: 8px; background: #fff; padding: 8px 12px; z-index: 10; }
+.skip:focus { left: 8px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
+
+/* Topo */
+.topo { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--borda); backdrop-filter: blur(6px); }
+.topo-in { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; }
+.marca { display: flex; align-items: center; gap: 10px; color: var(--apoio); text-decoration: none; font-size: 1.05rem; }
+.marca strong { color: var(--cor); }
+nav { display: none; gap: 20px; }
+nav a { color: var(--apoio); text-decoration: none; font-weight: 600; font-size: .95rem; }
+nav a:hover { color: var(--cor); }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--apoio) 0%, #13224F 100%); border-bottom: 6px solid var(--cor); color: #fff; padding: 40px 0 48px; }
+.hero-in { display: grid; gap: 28px; align-items: center; }
+.tag { text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; color: var(--amarelo); margin: 0 0 6px; font-weight: 600; }
+.hero h1 { font-size: clamp(1.8rem, 5.5vw, 2.9rem); line-height: 1.15; margin: 0 0 12px; }
+.lead { font-size: 1.08rem; max-width: 560px; color: #e5e7eb; margin: 0 0 20px; }
+.acoes { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 0; font-size: 1rem; cursor: pointer; font-family: inherit; }
+.btn-zap { background: var(--zap); color: #fff; }
+.btn-zap:hover { background: #0F5F30; }
+.btn-sec { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); }
+.btn-sec:hover { border-color: #fff; }
+.hero-foto { margin: 0; }
+.hero-foto img { display: block; width: 100%; height: auto; border-radius: var(--raio); aspect-ratio: 4 / 3; object-fit: cover; background: #13224F; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+
+/* Seções */
+.bloco { padding: 48px 16px; }
+h2 { color: var(--apoio); font-size: clamp(1.4rem, 4vw, 1.9rem); margin: 0 0 6px; }
+h3 { color: var(--apoio); font-size: 1.05rem; margin: 22px 0 6px; }
+.sub { color: var(--texto-suave); margin: 0 0 20px; }
+
+/* Categorias */
+.grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--borda); border-radius: var(--raio); background: var(--cinza); color: var(--texto); text-decoration: none; height: 100%; transition: border-color .15s, transform .15s; }
+.card:hover { border-color: var(--cor); transform: translateY(-2px); }
+.card-foto { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: #e5e1db; }
+.card-texto { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px 16px; }
+.card-nome { font-weight: 700; font-size: 1.05rem; }
+.card-ex { color: var(--texto-suave); font-size: .93rem; }
+.card-acao { color: var(--cor-escura); font-weight: 600; font-size: .9rem; margin-top: 6px; }
+
+/* Consulta de item */
+.procura { background: #FFF6D6; padding: 48px 0; }
+.procura-in { display: grid; gap: 20px; }
+.procura p { color: var(--texto-suave); margin: 0; }
+form { background: #fff; border: 1px solid var(--borda); border-radius: var(--raio); padding: 20px; display: grid; gap: 8px; }
+label { font-weight: 600; font-size: .95rem; }
+input { font: inherit; padding: 12px 14px; border: 1px solid #c9c3ba; border-radius: 10px; min-height: 48px; width: 100%; }
+input[aria-invalid="true"] { border-color: #B42318; }
+.erro { color: #B42318; font-weight: 600; margin: 0; }
+form .btn { margin-top: 8px; }
+
+/* Contato */
+.info { display: grid; gap: 24px; }
+address { font-style: normal; }
+.link { color: var(--cor-escura); font-weight: 600; }
+.horario { border-collapse: collapse; width: 100%; max-width: 360px; }
+.horario th, .horario td { text-align: left; padding: 6px 0; border-bottom: 1px solid var(--borda); font-weight: 400; }
+.horario td { text-align: right; font-weight: 600; }
+.status { display: inline-block; margin: 10px 0 0; padding: 4px 12px; border-radius: 999px; background: #fde8e4; color: #8a1f12; font-weight: 700; font-size: .9rem; }
+.status:empty { display: none; }
+.status.aberto { background: #e3f4ea; color: #145c33; }
+.mapa iframe { width: 100%; height: 340px; border: 0; border-radius: var(--raio); background: var(--cinza); }
+
+/* Botão flutuante e rodapé */
+.flutuante { position: fixed; right: 16px; bottom: 16px; z-index: 6; display: inline-flex; align-items: center; gap: 8px; background: var(--zap); color: #fff; font-weight: 700; padding: 12px 18px; border-radius: 999px; text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+footer { background: var(--apoio); color: #d1d5db; padding: 28px 0 88px; font-size: .92rem; }
+footer p { margin: 4px 0; }
+footer strong { color: #fff; }
+.credito { color: #9ca3af; }
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  nav { display: flex; }
+  .hero { padding: 64px 0 72px; }
+  .hero-in { grid-template-columns: 1.15fr .85fr; }
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  .procura-in { grid-template-columns: 1fr 1fr; align-items: center; }
+  .info { grid-template-columns: 1fr 1.2fr; align-items: start; }
+  .mapa iframe { height: 100%; min-height: 420px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card { transition: none; }
+}
