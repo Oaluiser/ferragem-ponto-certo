@@ -39,6 +39,8 @@ Para atualizar depois: altere os arquivos, faça **Commit** e **Push origin** no
 
 Opcional (recomendado ao dono): cadastrar a loja no **Perfil da Empresa no Google** (google.com/business) e colocar o link do site lá. É o que faz a loja aparecer no Google Maps.
 
+No ar em: **https://oaluiser.github.io/ferragem-ponto-certo/**
+
 ## Testes realizados (10/10/2026)
 
 - 9/9 testes automatizados aprovados (inclui intervalo de almoço e aviso "abre às 13h").
